@@ -1,0 +1,54 @@
+{
+  "name": "leaderboard",
+  "version": "1.0.0",
+  "description": "An app to display the highest score in a leaderboard",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HENRYKC24/leaderboard.git"
+  },
+  "keywords": [
+    "leaderboard",
+    "leader",
+    "board",
+    "score",
+    "highest",
+    "lead",
+    "top"
+  ],
+  "author": "Henry Kc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HENRYKC24/leaderboard/issues"
+  },
+  "homepage": "https://github.com/HENRYKC24/leaderboard#readme",
+  "private": true,
+  "scripts": {
+    "test": "jest --collect-coverage",
+    "build": "webpack",
+    "start": "webpack serve --open"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "jsdom"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.15.0",
+    "babel-eslint": "^10.1.0",
+    "css-loader": "^6.2.0",
+    "eslint": "^7.31.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "hint": "^6.1.4",
+    "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.0.6",
+    "style-loader": "^3.2.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.19.0",
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
