@@ -1,3 +1,109 @@
 body {
-  color: red;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main,
+.header {
+  padding: 10px;
+}
+
+.app-header {
+  margin: 20px 0 0;
+}
+
+.leaderboard-container {
+  margin-top: 30px;
+  box-shadow: 0 1px 5px 3px grey;
+  padding: 10px;
+}
+
+.score-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recent {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.refresh {
+  background-color: #fff;
+  outline: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.add {
+  margin-top: 50px;
+  box-shadow: 0 1px 5px 3px grey;
+  padding: 20px 0;
+}
+
+.add-score {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+}
+
+.scores {
+  list-style-type: none;
+  width: 100%;
+  margin: 10px auto;
+  padding: 0;
+}
+
+.item {
+  padding: 0.2rem;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.item:nth-child(odd) {
+  background-color: rgb(233, 227, 227);
+}
+
+.add input:not(.submit) {
+  display: block;
+  width: 80%;
+  margin: 28px auto;
+  min-height: 30px;
+  border-radius: 5px;
+  font-size: 1.3rem;
+}
+
+.submit {
+  display: block;
+  width: 82%;
+  margin: auto;
+  background-color: #fff;
+  outline: none;
+  min-height: 30px;
+  padding: 2px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: 48% 50%;
+    gap: 20px;
+  }
+
+  .add {
+    margin-top: 30px;
+  }
+
+  .submit {
+    width: 30.5vw;
+  }
+
+  .add input:not(.submit) {
+    width: 30vw;
+  }
 }
