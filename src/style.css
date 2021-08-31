@@ -56,10 +56,20 @@ body {
   padding: 0;
 }
 
+.name-score {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
 .item {
-  padding: 0.2rem;
+  padding: 0.2rem 0.5rem;
   min-height: 30px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -90,13 +100,19 @@ body {
 
 @media screen and (min-width: 768px) {
   main {
-    display: grid;
-    grid-template-columns: 48% 50%;
+    display: flex;
+    justify-content: space-between;
     gap: 20px;
+  }
+
+  .leaderboard-container {
+    width: 49%;
   }
 
   .add {
     margin-top: 30px;
+    width: 49%;
+    max-height: 500px;
   }
 
   .submit {
