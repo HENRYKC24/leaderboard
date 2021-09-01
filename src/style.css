@@ -14,6 +14,25 @@ body {
   margin: 20px 0 0;
 }
 
+.error-message {
+  display: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  width: calc(100% + 10px);
+  position: fixed;
+  text-align: center;
+  align-self: center;
+  top: 0;
+  color: transparent;
+  left: 0;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: all 2s;
+}
+
 .leaderboard-container {
   margin-top: 30px;
   box-shadow: 0 1px 5px 3px grey;
@@ -54,6 +73,8 @@ body {
   width: 100%;
   margin: 10px auto;
   padding: 0;
+  height: 70vh;
+  overflow-y: scroll;
 }
 
 .name-score {
@@ -112,7 +133,7 @@ body {
   .add {
     margin-top: 30px;
     width: 49%;
-    max-height: 500px;
+    height: auto;
   }
 
   .submit {
