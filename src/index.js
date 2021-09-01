@@ -1,22 +1,18 @@
 import './style.css';
-import addScore from './addScore';
+import postData, { showMessage } from './addScore';
 
 let scores = [];
 
-if (localStorage.scores) {
-  scores = JSON.parse(localStorage.getItem('scores'));
-}
-
 const scoresContainer = document.querySelector('.scores');
 
-const showScores = (scores) => {
+const showScores = async () => {
   scoresContainer.innerHTML = '';
   scores.forEach((each) => {
     const li = document.createElement('li');
     li.className = 'item';
     const nameSpan = document.createElement('span');
     nameSpan.className = 'player-name';
-    nameSpan.textContent = each.name;
+    nameSpan.textContent = each.user;
 
     const scoreSpan = document.createElement('span');
     scoreSpan.className = 'player-score';
@@ -27,7 +23,28 @@ const showScores = (scores) => {
   });
 };
 
-showScores(scores);
-document.querySelector('.submit').addEventListener('click', () => addScore(scores, showScores));
+const getScores = async (msg) => {
+  const getData = async () => (await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/hTQZn6X8J86KPjE48QNK/scores/')).json();
+  try {
+    const data = await getData();
+    scores = data.result;
+    showMessage(msg);
+    scores.sort((a, b) => a.score - b.score).reverse();
+    showScores();
+  } catch (e) {
+    showMessage(e.message);
+  }
+};
+
+document.querySelector('.submit').addEventListener('click', async () => {
+  const message = await postData();
+  await getScores(message.result);
+});
+
+document.querySelector('.refresh').addEventListener('click', () => {
+  getScores('');
+});
+
+getScores('');
 
 export default showScores;
