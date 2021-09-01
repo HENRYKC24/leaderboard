@@ -5,7 +5,7 @@ let scores = [];
 
 const scoresContainer = document.querySelector('.scores');
 
-const showScores = async () => {
+const showScores = () => {
   scoresContainer.innerHTML = '';
   scores.forEach((each) => {
     const li = document.createElement('li');
