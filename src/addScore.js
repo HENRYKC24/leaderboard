@@ -3,7 +3,6 @@ const errorMessageContainer = document.querySelector('.error-message');
 const showMessage = (message) => {
   if (message) {
     errorMessageContainer.textContent = message;
-    // errorMessageContainer.style.display = 'flex';
     errorMessageContainer.style.backgroundColor = 'rgb(23, 182, 9)';
     errorMessageContainer.style.color = '#fff';
     setTimeout(() => {
