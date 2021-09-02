@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 body {
   margin: 0;
   box-sizing: border-box;
   padding: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .main,
@@ -12,6 +15,8 @@ body {
 
 .app-header {
   margin: 20px 0 0;
+  font-family: 'Permanent Marker', cursive;
+  color: #008cba;
 }
 
 .error-message {
@@ -46,14 +51,54 @@ body {
 
 .recent {
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 .refresh {
-  background-color: #fff;
+  background-color: #008cba;
+  font-size: 1.2rem;
+  border: none;
+  height: 40px;
   outline: none;
+  display: flex;
+  align-items: center;
+  line-height: 40;
   border-radius: 5px;
   font-weight: bold;
+  color: #fff;
+  padding: 0 15px;
+}
+
+.fa-sync {
+  font-size: 1.2rem;
+  margin-right: 5px;
+  transition: transform 0.5s linear;
+}
+
+.rotate {
+  transform: rotate(720deg);
+}
+
+.submit {
+  display: block;
+  background-color: #008cba;
+  color: #fff;
+  width: 82%;
+  margin: auto;
+  outline: none;
+  border: none;
+  height: 40px;
+  padding: 2px;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.refresh:hover,
+.submit:hover {
+  background-color: #e7e7e7;
+  color: #008cba;
+  cursor: pointer;
 }
 
 .add {
@@ -73,7 +118,7 @@ body {
   width: 100%;
   margin: 10px auto;
   padding: 0;
-  height: 70vh;
+  height: 60vh;
   overflow-y: scroll;
 }
 
@@ -82,41 +127,40 @@ body {
   justify-content: space-between;
   margin-top: 20px;
   padding: 0 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 
 .item {
   padding: 0.2rem 0.5rem;
   min-height: 30px;
+  font-size: 1.3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .item:nth-child(odd) {
-  background-color: rgb(233, 227, 227);
+  background-color: #e7e7e7;
+}
+
+.top-score {
+  color: #008cba;
 }
 
 .add input:not(.submit) {
   display: block;
   width: 80%;
   margin: 28px auto;
+  border: solid rgb(230, 226, 226);
   min-height: 30px;
   border-radius: 5px;
   font-size: 1.3rem;
 }
 
-.submit {
-  display: block;
-  width: 82%;
-  margin: auto;
-  background-color: #fff;
+.add input:not(.submit):focus {
   outline: none;
-  min-height: 30px;
-  padding: 2px;
-  border-radius: 5px;
-  font-size: 1.5rem;
+  border: solid #008cba;
 }
 
 @media screen and (min-width: 768px) {
@@ -137,10 +181,10 @@ body {
   }
 
   .submit {
-    width: 30.5vw;
+    width: 20.5vw;
   }
 
   .add input:not(.submit) {
-    width: 30vw;
+    width: 20vw;
   }
 }
