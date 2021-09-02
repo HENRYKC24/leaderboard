@@ -5,9 +5,11 @@ let scores = [];
 
 const scoresContainer = document.querySelector('.scores');
 
+let topScore = 0;
+
 const showScores = () => {
   scoresContainer.innerHTML = '';
-  scores.forEach((each) => {
+  scores.forEach((each, ind) => {
     const li = document.createElement('li');
     li.className = 'item';
     const nameSpan = document.createElement('span');
@@ -18,7 +20,31 @@ const showScores = () => {
     scoreSpan.className = 'player-score';
     scoreSpan.textContent = each.score;
 
-    li.append(nameSpan, scoreSpan);
+    const topSpan = document.createElement('i');
+    topSpan.classList.add('fas', 'fa-trophy-alt');
+
+    if (ind === 0) {
+      topScore = each.score;
+      li.classList.add('top-score');
+    }
+
+    if (ind === 0) {
+      topScore = each.score;
+      li.classList.add('top-score');
+    }
+
+    if (ind === 0) {
+      topScore = each.score;
+      li.classList.add('top-score');
+    }
+
+    li.append(nameSpan, (ind === 0 && topSpan) || '', scoreSpan);
+
+    if (ind > 0 && (each.score === topScore)) {
+      li.insertBefore(topSpan, li.firstElementChild.nextElementSibling);
+      li.classList.add('top-score');
+    }
+
     scoresContainer.append(li);
   });
 };
@@ -41,8 +67,12 @@ document.querySelector('.submit').addEventListener('click', async () => {
   await getScores(message.result);
 });
 
+document.querySelector('.refresh').addEventListener('click', async () => {
+  await getScores('');
+});
+
 document.querySelector('.refresh').addEventListener('click', () => {
-  getScores('');
+  document.querySelector('.fa-sync').classList.toggle('rotate');
 });
 
 getScores('');
