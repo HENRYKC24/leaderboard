@@ -54,9 +54,9 @@ const getScores = async (msg) => {
   try {
     const data = await getData();
     scores = data.result;
-    showMessage(msg);
     scores.sort((a, b) => a.score - b.score).reverse();
     showScores();
+    showMessage(msg, '#228b22');
   } catch (e) {
     showMessage(e.message);
   }
