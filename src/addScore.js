@@ -1,9 +1,9 @@
 const errorMessageContainer = document.querySelector('.error-message');
 
-const showMessage = (message) => {
+const showMessage = (message, backgroundColor) => {
   if (message) {
     errorMessageContainer.textContent = message;
-    errorMessageContainer.style.backgroundColor = 'rgb(23, 182, 9)';
+    errorMessageContainer.style.backgroundColor = backgroundColor;
     errorMessageContainer.style.color = '#fff';
     setTimeout(() => {
       errorMessageContainer.style.backgroundColor = 'transparent';
@@ -15,11 +15,12 @@ const showMessage = (message) => {
 const postData = async () => {
   const nameField = document.querySelector('.name');
   const scoreField = document.querySelector('.score');
-  const user = nameField.value;
-  const score = scoreField.value;
+  const { value: user } = nameField;
+  const { value: score } = scoreField;
 
   if (!score || !user) {
-    return 'Fill out the input';
+    showMessage('Please, fill out all the fields.', '#f33');
+    return false;
   }
 
   const scoreObject = {
@@ -29,13 +30,20 @@ const postData = async () => {
 
   nameField.value = '';
   scoreField.value = '';
-  return (await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/hTQZn6X8J86KPjE48QNK/scores/', {
-    method: 'POST',
-    body: JSON.stringify(scoreObject),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  })).json();
+
+  try {
+    const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/hTQZn6X8J86KPjE48QNK/scores/';
+    const message = (await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(scoreObject),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })).json();
+    return message;
+  } catch (e) {
+    return { result: e };
+  }
 };
 
 export default postData;
