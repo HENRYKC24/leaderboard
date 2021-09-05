@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.main,
+.header {
+  padding: 10px;
+}
+
+.app-header {
+  margin: 20px 0 0;
+  font-family: 'Permanent Marker', cursive;
+  color: #008cba;
+}
+
+.error-message {
+  display: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  width: calc(100% + 10px);
+  position: fixed;
+  text-align: center;
+  align-self: center;
+  top: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: transparent;
+  left: 0;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: all 2s;
+}
+
+.leaderboard-container {
+  margin-top: 30px;
+  box-shadow: 0 1px 5px 3px grey;
+  padding: 10px;
+}
+
+.score-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recent {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.refresh {
+  background-color: #008cba;
+  font-size: 1.2rem;
+  border: none;
+  height: 40px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  line-height: 40;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #fff;
+  padding: 0 15px;
+}
+
+.fa-sync {
+  font-size: 1.2rem;
+  margin-right: 5px;
+  transition: transform 0.5s linear;
+}
+
+.rotate {
+  transform: rotate(720deg);
+}
+
+.submit {
+  display: block;
+  background-color: #008cba;
+  color: #fff;
+  width: 82%;
+  margin: auto;
+  outline: none;
+  border: none;
+  height: 40px;
+  padding: 2px;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.refresh:hover,
+.submit:hover {
+  background-color: #e7e7e7;
+  color: #008cba;
+  cursor: pointer;
+}
+
+.add {
+  margin-top: 50px;
+  box-shadow: 0 1px 5px 3px grey;
+  padding: 20px 0;
+}
+
+.add-score {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+}
+
+.scores {
+  list-style-type: none;
+  width: 100%;
+  margin: 10px auto;
+  padding: 0;
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+.name-score {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0 0.5rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.item {
+  padding: 0.2rem 0.5rem;
+  min-height: 30px;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item:nth-child(odd) {
+  background-color: #e7e7e7;
+}
+
+.top-score {
+  color: #008cba;
+}
+
+.add input:not(.submit) {
+  display: block;
+  width: 80%;
+  margin: 28px auto;
+  border: solid rgb(230, 226, 226);
+  min-height: 30px;
+  border-radius: 5px;
+  font-size: 1.3rem;
+}
+
+.add input:not(.submit):focus {
+  outline: none;
+  border: solid #008cba;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .leaderboard-container {
+    width: 49%;
+  }
+
+  .add {
+    margin-top: 30px;
+    width: 49%;
+    height: auto;
+  }
+
+  .submit {
+    width: 20.5vw;
+  }
+
+  .add input:not(.submit) {
+    width: 20vw;
+  }
+}

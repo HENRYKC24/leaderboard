@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaderboard</title>
+  <link
+  rel="stylesheet"
+  href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+  crossorigin="anonymous"
+/>
+<script defer src="index.bundle.js"></script></head>
+<body>
+  <header class="header">
+    <p class="error-message"></p>
+    <h1 class="app-header">Leaderboard</h1>
+  </header>
+  <main class="main">
+    <div class="leaderboard-container">
+      <div class="score-heading">
+        <span class="recent">Recent Scores</span>
+        <button type="button" class="refresh"><i class="fal fa-sync"></i>Refresh</button>
+      </div>
+      <div class="name-score">
+        <span>Name</span>
+        <span>Score</span>
+      </div>
+      <ul class="scores"></ul>
+    </div>
+    <form action="#" class="add" autocomplete="off">
+      <h2 class="add-score">Add your score</h2>
+      <input type="text" placeholder="Name" class="name" name="name">
+      <input type="number" placeholder="Score" class="score" name="score">
+      <input type="button" class="submit" value="Submit" name="submit">
+    </form>
+  </main>
+  <footer></footer>
+</body>
+</html>
